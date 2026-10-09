@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f5ec" />
+  <title>Goodground — Coffee, shared</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Goodground home"><span class="brand-mark">g</span><span>goodground<span class="brand-dot">.</span></span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="active" href="#market">Explore coffee</a><a href="#how">How it works</a>
+    </nav>
+    <div class="header-actions"><button class="sell-link" id="open-sell">Sell your coffee <span>↗</span></button><button class="cart-button" id="cart-open" aria-label="Open basket">Basket <span class="cart-count" id="cart-count">0</span></button><button class="menu-button" id="menu-toggle" aria-label="Toggle navigation">☰</button></div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span> GOOD COFFEE, GOOD PEOPLE</div>
+        <h1>Your next<br>favorite <em>cup</em><br>is out there.</h1>
+        <p>A little marketplace for a lot of good coffee. Discover small-batch beans from people who care about every cup.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#market">Find your coffee <span>↘</span></a><button class="button button-outline" id="hero-sell">I roast & sell <span>↗</span></button></div>
+        <div class="community-proof"><div class="avatar-stack"><span>J</span><span>M</span><span>A</span><span>R</span></div><span><strong>2,400+</strong> coffee people, and counting</span></div>
+      </div>
+      <div class="hero-art"><div class="hero-photo"></div><div class="photo-label"><span class="label-icon">✳</span><span><b>From the roaster</b><small>Freshly roasted, thoughtfully shared</small></span></div><div class="hero-stamp"><span>GOOD<br>COFFEE<br>GROWS<br>HERE</span><i>✳</i></div><div class="floating-bean bean-one">☕</div><div class="floating-bean bean-two">✳</div></div>
+      <div class="hero-bottom"><span>01 — 04</span><span class="scroll-cue">SCROLL TO EXPLORE <b>↓</b></span><span>MADE FOR YOUR MORNINGS</span></div>
+    </section>
+
+    <section class="market section-wrap" id="market">
+      <div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> THE COMMUNITY MARKET</div><h2>Good beans.<br><em>Better stories.</em></h2></div><p>Shop small-batch roasts from independent makers, or find a new home for the beans you love to make.</p></div>
+      <div class="market-tools"><div class="filter-tabs" role="tablist" aria-label="Filter coffees"><button class="filter active" data-filter="all">All coffee <span>06</span></button><button class="filter" data-filter="light">Light roast</button><button class="filter" data-filter="medium">Medium roast</button><button class="filter" data-filter="dark">Dark roast</button></div><label class="search-box"><span>⌕</span><input id="search" type="search" placeholder="Search beans or roasters" /></label></div>
+      <div class="product-grid" id="product-grid"></div>
+      <div class="market-footer"><span>THOUGHTFULLY SOURCED. COMMUNITY ROASTED.</span><button class="text-button" id="show-all">See all coffees <span>↗</span></button></div>
+    </section>
+
+    <section class="sell-banner" id="how"><div class="banner-scribble">✳</div><div><div class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> YOUR COFFEE HAS A PLACE HERE</div><h2>Roast something<br><em>good?</em> Share it.</h2><p>Meet the people who’ll love your next batch. Listing your coffee takes less time than brewing a cup.</p><button class="button button-light" id="banner-sell">Open your little shop <span>↗</span></button></div><div class="banner-side"><div class="banner-image"></div><div class="banner-note">SMALL BATCHES.<br>BIG HEARTS. <span>♥</span></div><div class="banner-number">02<span>/04</span></div></div></section>
+    <footer><a class="brand brand-footer" href="#home"><span class="brand-mark">g</span><span>goodground<span class="brand-dot">.</span></span></a><span>GROWN WITH CARE. SHARED WITH JOY.</span><span>© GOODGROUND 2025</span></footer>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <div class="overlay" id="sell-overlay" aria-hidden="true"><section class="dialog" role="dialog" aria-modal="true" aria-labelledby="sell-title"><button class="close-dialog" data-close="sell-overlay" aria-label="Close">×</button><div class="eyebrow"><span class="eyebrow-line"></span> YOUR LITTLE COFFEE SHOP</div><h2 id="sell-title">Share what<br><em>you roast.</em></h2><p class="dialog-intro">Tell the community about your beans. Your listing will be ready to preview in a moment.</p><form id="sell-form"><label>Your coffee's name<input required name="name" placeholder="e.g. Sunday Morning Blend"></label><div class="form-row"><label>Roast style<select name="roast"><option value="light">Light roast</option><option value="medium" selected>Medium roast</option><option value="dark">Dark roast</option></select></label><label>Price / 250g ($)<input required name="price" type="number" min="1" step="0.5" value="18"></label></div><label>A little about it<textarea name="description" rows="3" placeholder="Flavor notes, where it's from, what makes it special..."></textarea></label><button class="button button-dark submit-button" type="submit">List my coffee <span>↗</span></button></form></section></div>
+  <div class="overlay" id="cart-overlay" aria-hidden="true"><section class="dialog cart-dialog" role="dialog" aria-modal="true" aria-labelledby="cart-title"><button class="close-dialog" data-close="cart-overlay" aria-label="Close">×</button><div class="eyebrow"><span class="eyebrow-line"></span> YOUR BASKET</div><h2 id="cart-title">A good choice.</h2><div id="cart-items"></div><div class="cart-total"><span>Total</span><strong id="cart-total">$0.00</strong></div><button class="button button-dark checkout-button" id="checkout">Checkout <span>↗</span></button></section></div>
+  <script src="app.js"></script>
+</body>
+</html>
